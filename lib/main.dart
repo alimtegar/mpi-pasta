@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mpi_pasta/home.dart';
+import 'package:mpi_pasta/competence.dart';
+import 'package:mpi_pasta/menu/menu.dart';
 
 void main() {
   runApp(App());
@@ -25,7 +26,28 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(title: 'Flutter Demo Home Page'),
+      initialRoute: '/menu',
+      // routes: {
+      //   '/menu': (context) => Menu(),
+      //   '/competence': (context) => Competence(),
+      // },
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case "/menu":
+            return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => Menu(),
+              transitionDuration: Duration(seconds: 0),
+            );
+          case "/competence":
+            return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => Competence(),
+              transitionDuration: Duration(seconds: 0),
+            );
+        }
+
+        return MaterialPageRoute(builder: (context) => Menu());
+      },
+      // home: Content(title: 'Flutter Demo Home Page'),
     );
   }
 }

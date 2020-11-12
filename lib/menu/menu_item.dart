@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MenuItem extends StatefulWidget {
-  MenuItem({Key key, this.title, this.image}) : super(key: key);
+  MenuItem({Key key, this.title, this.image, this.routeName}) : super(key: key);
 
   final String title;
   final String image;
+  final String routeName;
 
   @override
   _MenuItemState createState() => _MenuItemState();
@@ -30,7 +31,9 @@ class _MenuItemState extends State<MenuItem> {
                   child: InkWell(
                     borderRadius: BorderRadius.circular(1000),
                     child: Image.asset(widget.image),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, widget.routeName);
+                    },
                   )),
             ),
           ),

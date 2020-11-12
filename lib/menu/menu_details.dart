@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:mpi_pasta/menu_item.dart';
-import 'package:mpi_pasta/menu_title.dart';
+import 'package:mpi_pasta/menu/menu_item.dart';
+import 'package:mpi_pasta/menu/menu_title.dart';
 
-class Menu extends StatelessWidget {
+class MenuDetails extends StatelessWidget {
   List<Map<String, dynamic>> menu = <Map<String, dynamic>>[
     {
       'title': 'Kompentesi',
       'image': 'assets/images/competence-icon-no-bg.png',
+      'route_name': '/competence',
     },
     {
       'title': 'Materi',
       'image': 'assets/images/material-icon-no-bg.png',
+      'route_name': '/material',
     },
     {
       'title': 'Evaluasi',
       'image': 'assets/images/evaluation-icon-no-bg.png',
+      'route_name': '/evaluation',
     },
     {
       'title': 'Referensi',
       'image': 'assets/images/reference-icon-no-bg.png',
+      'route_name': '/reference',
     },
     {
       'title': 'Profil',
       'image': 'assets/images/profile-icon-no-bg.png',
+      'route_name': '/profile',
     },
   ];
 
@@ -58,6 +63,7 @@ class Menu extends StatelessWidget {
                           MenuItem(
                         title: menu[index]['title'],
                         image: menu[index]['image'],
+                        routeName: menu[index]['route_name'],
                       ),
                     ),
                   ),

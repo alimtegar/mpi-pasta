@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mpi_pasta/outline_icon_button.dart';
+import 'package:mpi_pasta/buttons/outline_icon_button.dart';
 
-class TopButtons extends StatelessWidget {
+class ExitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 8,
-      left: 8,
-      child: Material(
-        color: Colors.transparent,
-        child: Row(
-          children: [
-            OutlineIconButton(
-              icon: Icon(
-                Icons.close,
-                size: 24,
-                color: Colors.white,
-              ),
-              onTap: () {
-                _showAlertDialog(context);
-              },
-            ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.all(4),
+      child: OutlineIconButton(
+        icon: Icon(
+          Icons.close,
+          size: 24,
+          color: Colors.white,
         ),
+        onTap: () {
+          _showAlertDialog(context);
+        },
       ),
     );
   }
