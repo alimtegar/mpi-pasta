@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpi_pasta/sub_title.dart';
 
 class MenuTitle extends StatelessWidget {
   @override
@@ -7,13 +8,9 @@ class MenuTitle extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.center,
-          child: Text(
-            'Media Pembelajaran Interaktif'.toUpperCase(),
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-            ),
+          child: SubTitle(
+            data: 'Media Pembelajaran Interaktif'.toUpperCase(),
+            color: Colors.white,
           ),
         ),
         Container(
