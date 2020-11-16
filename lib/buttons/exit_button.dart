@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mpi_pasta/buttons/outline_icon_button.dart';
-import 'package:mpi_pasta/paragraph.dart';
 import 'package:mpi_pasta/sub_title.dart';
 
 class ExitButton extends StatelessWidget {

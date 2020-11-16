@@ -6,7 +6,7 @@ class UnorderedList extends StatefulWidget {
       : assert(unorderedList != null),
         super(key: key);
 
-  List<String> unorderedList;
+  final List<String> unorderedList;
   final EdgeInsetsGeometry padding;
 
 
