@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
 
-class SubTitle extends StatefulWidget {
-  SubTitle({
+class Paragraph extends StatefulWidget {
+  Paragraph({
     Key key,
     this.data,
-    this.color,
     this.padding,
-  }) : assert(data != null),
+  })  : assert(data != null),
         super(key: key);
 
   final String data;
-  final Color color;
   final EdgeInsetsGeometry padding;
 
   @override
-  _SubTitleState createState() => _SubTitleState();
+  _ParagraphState createState() => _ParagraphState();
 }
 
-class _SubTitleState extends State<SubTitle> {
+class _ParagraphState extends State<Paragraph> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: widget.padding != null ? widget.padding : EdgeInsets.zero,
       child: Text(
         widget.data,
+        textAlign: TextAlign.justify,
         style: TextStyle(
-          color: widget.color != null ? widget.color : Colors.black,
           height: 1.5,
-          fontWeight: FontWeight.bold,
           fontSize: 14,
         ),
       ),

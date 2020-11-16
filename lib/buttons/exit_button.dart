@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mpi_pasta/buttons/outline_icon_button.dart';
+import 'package:mpi_pasta/paragraph.dart';
+import 'package:mpi_pasta/sub_title.dart';
 
 class ExitButton extends StatelessWidget {
   @override
@@ -29,16 +31,22 @@ class ExitButton extends StatelessWidget {
 
   Widget _buildAlertDialog(BuildContext context) {
     return AlertDialog(
-      title: Text('Apakah Anda yakin ingin keluar?'),
+      title: SubTitle(data: 'Yakin ingin keluar?'.toUpperCase()),
       actions: [
         FlatButton(
-          child: Text("Ya"),
+          child: SubTitle(
+            data: "Ya".toUpperCase(),
+            color: Colors.black.withAlpha(66),
+          ),
           onPressed: () {
             SystemNavigator.pop(); // Exit from app
           },
         ),
         FlatButton(
-          child: Text("Tidak"),
+          child: SubTitle(
+            data: "Tidak".toUpperCase(),
+            color: Colors.black.withAlpha(66),
+          ),
           onPressed: () {
             Navigator.pop(context); // Hide alert dialog
           },

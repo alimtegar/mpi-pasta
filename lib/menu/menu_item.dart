@@ -24,13 +24,11 @@ class _MenuItemState extends State<MenuItem> {
       child: Column(
         children: [
           Material(
-            color: Colors.transparent,
+            elevation: 2,
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(1000),
             child: Center(
               child: Ink(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
                   height: 96,
                   width: 96,
                   child: InkWell(

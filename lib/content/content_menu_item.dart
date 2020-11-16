@@ -5,8 +5,10 @@ import 'package:mpi_pasta/menu/menu.dart';
 import 'package:mpi_pasta/sub_title.dart';
 
 class ContentMenuItem extends StatefulWidget {
-  ContentMenuItem({Key key, this.contentMenuItem}) : super(key: key);
+  ContentMenuItem({Key key, this.menuItemId, this.contentMenuItem})
+      : super(key: key);
 
+  final int menuItemId;
   final Map<String, dynamic> contentMenuItem;
 
   @override
@@ -20,23 +22,26 @@ class _ContentMenuItemState extends State<ContentMenuItem> {
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Material(
+          elevation: 2,
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(5.0)),
           child: Ink(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(4)),
-            ),
             child: InkWell(
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
               onTap: () {
                 Widget route;
 
                 if (widget.contentMenuItem.containsKey('sub_content_menu')) {
                   route = SubContent(
-                      menuItemId: 0, contentMenuItemId: 0, subContentId: 0);
-                  // route = Text('hello');
+                    menuItemId: widget.menuItemId,
+                    contentMenuItemId: widget.contentMenuItem['id'],
+                    subContentId: 0,
+                  );
                 } else if (widget.contentMenuItem.containsKey('content')) {
                   route = Content(
-                      menuItemId: 0,
-                      contentMenuItemId: widget.contentMenuItem['id']);
+                    menuItemId: widget.menuItemId,
+                    contentMenuItemId: widget.contentMenuItem['id'],
+                  );
                 } else {
                   route = Menu();
                 }

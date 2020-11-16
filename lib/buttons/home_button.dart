@@ -14,7 +14,7 @@ class HomeButton extends StatelessWidget {
           color: Colors.white,
         ),
         onTap: () {
-          Navigator.pop(context);
+          Navigator.popUntil(context, (route) => route.isFirst);
         },
       ),
     );

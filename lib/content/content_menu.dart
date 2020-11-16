@@ -22,7 +22,8 @@ class _ContentMenuState extends State<ContentMenu> {
 
   @override
   void initState() {
-    _contentMenu = GlobalVariables.menu.firstWhere((menuItem) => menuItem['id'] == widget.menuItemId);
+    _contentMenu = GlobalVariables.menu
+        .firstWhere((menuItem) => menuItem['id'] == widget.menuItemId);
     super.initState();
   }
 
@@ -62,6 +63,7 @@ class _ContentMenuState extends State<ContentMenu> {
             children: [
               i < _contentMenu['content_menu'].length
                   ? ContentMenuItem(
+                      menuItemId: widget.menuItemId,
                       contentMenuItem: _contentMenu['content_menu'][i],
                     )
                   : Expanded(
@@ -71,6 +73,7 @@ class _ContentMenuState extends State<ContentMenu> {
                     ),
               (i + rowNumbers) < _contentMenu['content_menu'].length
                   ? ContentMenuItem(
+                      menuItemId: widget.menuItemId,
                       contentMenuItem: _contentMenu['content_menu']
                           [i + rowNumbers],
                     )
@@ -88,6 +91,7 @@ class _ContentMenuState extends State<ContentMenu> {
         children.add(
           i < _contentMenu['content_menu'].length
               ? ContentMenuItem(
+                  menuItemId: widget.menuItemId,
                   contentMenuItem: _contentMenu['content_menu'][i],
                 )
               : Expanded(
